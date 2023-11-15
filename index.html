@@ -8,13 +8,59 @@
     <title>21</title>
 </head>
 <body>
-    <form>
+    <main>
+        <header>Game of 21</header>
+        <form id="">
+            <label for="points">points</label>
+            <input name="points" type="number" min="50" max="1000" required>
+            <button type="submit">Place Wager</button>
+        </form>
+        <div class="dealer">
+            <label for="dealers-hand">Dealer's Hand</label>
+            <div class="dealers-hand">17</div>
+        </div>
+        <div class="points-lost">Total Points Won:</div>
+        <div class="points-won">Total Poibts Lost</div>
+        <div class="default">Pull a higher count than the dealer to win!</div>
+        <div class="player">
+            <label for="players-hand">Player's Hand</label>
+            <ul class="players-hand">
+                <li class="card one">
+                    <img src="assets/examplecard.png" alt="ace-of-clubs">
+                </li>
+                <li class="card two">
+                    <img src="assets/examplecard.png" alt="ace-of-clubs">
+                </li>
+                <li class="card three">
+                    <img src="assets/examplecard.png" alt="ace-of-clubs">
+                </li>
+                <li class="card two">
+                    <img src="assets/examplecard.png" alt="ace-of-clubs">
+                </li>
+                <li class="card three">
+                    <img src="assets/examplecard.png" alt="ace-of-clubs">
+                </li>
+                <li class="card two">
+                    <img src="assets/examplecard.png" alt="ace-of-clubs">
+                </li>
+                <li class="card three">
+                    <img src="assets/examplecard.png" alt="ace-of-clubs">
+                </li>
+            </ul>
+            
+        </div>
+        <section class="forms">
+            <form class="draw">
+                <button type="submit">Hit</button>
+            </form>
+            <form class="hold">
+                <button type="submit">Hold</button>
+            </form>
+            
 
-    </form>
-    <div class="dealer">
-        Dealer's Hand
-    </div>
-    <div class="player">Player's Hand</div>
+        </section>
+    </main>
+    
 
     
 </body>

@@ -1,0 +1,87 @@
+html,
+body{
+    height: 100vh;
+    background: url("./assets/21\ table.jpeg") no-repeat center fixed;
+    background-size: cover;
+}
+header{
+    font-size: 50px;
+    grid-column: 3;
+    text-align: center;
+}
+#page-background{
+    display: inline;
+}
+main{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(6,1fr);
+}
+.players-hand{
+    list-style: none;
+    display: flex;
+}
+
+.player{
+    grid-row: 5;
+    grid-column: 3;     
+}
+
+.dealer{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.dealers-hand{
+    text-align: center;
+    font-size: 50px;
+    color: red;
+    font-style: italic;
+}
+.middle-header{
+    font-size: 40px;
+    display: flex;
+    grid-row: 2;
+    grid-column: 3;
+    justify-content: center;
+    align-items: center;
+}
+.card img{
+    height: 200px;
+}
+
+label{
+    display: flex;
+    color: white;
+    font-size: 30px;
+    justify-content: center;
+}
+
+.forms{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    grid-row:6;
+    grid-column:3
+}
+
+form{
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+form button{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.points-won{
+    grid-column: 1;
+    grid-row: 6;
+}
+
+.points-lost{
+    grid-column: 6;
+    grid-row: 6;
+}
