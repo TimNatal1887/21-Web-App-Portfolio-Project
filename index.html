@@ -10,22 +10,22 @@
 <body>
     <main>
         <header>Game of 21</header>
-        <form id="">
-            <label for="points">points</label>
-            <input name="points" type="number" min="50" max="1000" required>
+        <form class="wager">
+            <label for="points">Place a Wager</label>
+            <input name="points" type="number" min="50" max="9999" required>
             <button type="submit">Place Wager</button>
         </form>
         <div class="dealer">
-            <label for="dealers-hand">Dealer's Hand</label>
-            <div class="dealers-hand">17</div>
+            <label for="dealers-count">Dealer's Hand</label>
+            <div id="dealers-count"></div>
         </div>
-        <div class="points-lost">Total Points Won:</div>
-        <div class="points-won">Total Poibts Lost</div>
+        <div class="points-won">Total Points Won:7500</div>
+        <div class="points-lost">Total Points Lost: 1000</div>
         <div class="default">Pull a higher count than the dealer to win!</div>
         <div class="player">
-            <label for="players-hand">Player's Hand</label>
+            <label for="players-hand">Player's Hand: <div id="player-count">17</div></label>
             <ul class="players-hand">
-                <li class="card one">
+                <!-- <li class="card one">
                     <img src="assets/examplecard.png" alt="ace-of-clubs">
                 </li>
                 <li class="card two">
@@ -45,11 +45,11 @@
                 </li>
                 <li class="card three">
                     <img src="assets/examplecard.png" alt="ace-of-clubs">
-                </li>
+                </li> -->
             </ul>
             
         </div>
-        <section class="forms">
+        <section class="player-moves">
             <form class="draw">
                 <button type="submit">Hit</button>
             </form>

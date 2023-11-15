@@ -10,9 +10,7 @@ header{
     grid-column: 3;
     text-align: center;
 }
-#page-background{
-    display: inline;
-}
+
 main{
     height: 100vh;
     display: grid;
@@ -22,19 +20,23 @@ main{
 .players-hand{
     list-style: none;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .player{
     grid-row: 5;
     grid-column: 3;     
 }
-
+#player-count{
+    color: greenyellow;
+}
 .dealer{
     grid-column: 3;
     grid-row: 2;
 }
 
-.dealers-hand{
+#dealers-count{
     text-align: center;
     font-size: 50px;
     color: red;
@@ -59,13 +61,25 @@ label{
     justify-content: center;
 }
 
-.forms{
+.player-moves{
     align-items: center;
     justify-content: center;
     display: flex;
     grid-row:6;
     grid-column:3
 }
+
+.wager{
+    display: flex;
+    flex-direction: column;
+    grid-row: 3;
+    grid-column: 3;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+
 
 form{
     margin-left: 40px;
@@ -78,17 +92,32 @@ form button{
 }
 
 .points-won{
+    color: green;
     grid-column: 2;
     grid-row: 6;
 }
 
 .points-lost{
+    color: red;
     grid-column: 4;
     grid-row: 6;
 }
-
+.default{
+    display: none;
+    text-align: center;
+    grid-row: 3;
+    grid-column: 3;
+    color: wheat;
+}
 @media(max-width:768px){
     main{
         grid-template-columns: 1fr;
+    }
+    .players-hand{
+        flex-wrap: wrap;
+    }
+    .wager{
+        display: inline;
+        
     }
 }
