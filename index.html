@@ -9,11 +9,25 @@
 </head>
 <body>
     <main>
-        <header>Game of 21</header>
+        <header class="header-1">
+        <span class="start-black">G</span>
+        <span class="start-red">a</span>
+        <span class="start-black">m</span>
+        <span class="start-red">e</span>
+        <span class="start-black">O</span>
+        <span class="start-red">f</span>
+        <spa class="start-black">2</span>
+        <span class="start-red">1</span>
+        </header>
+        <header class="header-2">
+            <span class="start-black">2</span>
+            <span class="start-red">1</span>
+        </header>
         <form class="wager">
             <label for="points">Place a Wager</label>
             <input name="points" type="number" min="50" max="9999" required>
-            <button type="submit">Place Wager</button>
+            <button type="submit">Start Game</button>
+            <div class="error">Error! Wager must be between 50 and 9999 points!</div>
         </form>
         <div class="dealer">
             <label for="dealers-count">Dealer's Hand</label>
@@ -25,7 +39,7 @@
         <div class="player">
             <label for="players-hand">Player's Hand: <div id="player-count">17</div></label>
             <ul class="players-hand">
-                <!-- <li class="card one">
+                <li class="card one">
                     <img src="assets/examplecard.png" alt="ace-of-clubs">
                 </li>
                 <li class="card two">
@@ -45,7 +59,7 @@
                 </li>
                 <li class="card three">
                     <img src="assets/examplecard.png" alt="ace-of-clubs">
-                </li> -->
+                </li>
             </ul>
             
         </div>

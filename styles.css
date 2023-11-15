@@ -5,14 +5,52 @@ body{
     background: url("./assets/21\ table.jpeg") no-repeat center fixed;
     background-size: cover;
 }
-header{
+@keyframes colorChange{
+    0%, 100% {
+        color: black;
+    }
+    50% {
+        color: red;
+    }
+}
+
+.start-black{
     font-size: 50px;
-    grid-column: 3;
+    font-weight: bold;
+    animation: colorChange 1s infinite;
+    display: inline-block;
+}
+
+@keyframes colorChange2{
+    0%, 100% {
+        color: red;
+    }
+    50% {
+        color: black;
+    }
+}
+
+.start-red{
+    font-size: 50px;
+    font-weight: bold;
+    animation: colorChange2 1s infinite;
+    display: inline-block;
+    
+}
+
+header{
+    padding: 10px;
+    font-size: 50px;
+    grid-column: 2/5;
     text-align: center;
+}
+.header-2{
+    display: none;
 }
 
 main{
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(6,1fr);
@@ -70,8 +108,8 @@ label{
 }
 
 .wager{
-    display: flex;
-    flex-direction: column;
+    text-align: center;
+    display: none;
     grid-row: 3;
     grid-column: 3;
     justify-content: center;
@@ -90,34 +128,57 @@ form button{
     font-size: 18px;
     font-weight: bold;
 }
+.draw{
+    /* display: none; */
+
+}
+.hold{
+    /* display: none; */
+}
 
 .points-won{
+    text-align: center;
     color: green;
     grid-column: 2;
     grid-row: 6;
 }
 
 .points-lost{
+    text-align: center;
     color: red;
     grid-column: 4;
     grid-row: 6;
 }
 .default{
-    display: none;
+    /* display: none; */
     text-align: center;
     grid-row: 3;
     grid-column: 3;
     color: wheat;
 }
-@media(max-width:768px){
+.error{
+    display: none;
+    margin-top: 10px;
+    color: white;
+    border: 3px solid red;
+    background: red;
+}
+@media(max-width:848px){
     main{
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+    .header-1{
+        display: none;
+    }
+
+    .header-2{
+        display: block;
     }
     .players-hand{
         flex-wrap: wrap;
     }
-    .wager{
-        display: inline;
-        
+    .card img{
+        height: 175px;
     }
 }
