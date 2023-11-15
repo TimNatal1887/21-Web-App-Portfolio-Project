@@ -1,6 +1,7 @@
 html,
 body{
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     background: url("./assets/21\ table.jpeg") no-repeat center fixed;
     background-size: cover;
 }
@@ -77,11 +78,17 @@ form button{
 }
 
 .points-won{
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 6;
 }
 
 .points-lost{
-    grid-column: 6;
+    grid-column: 4;
     grid-row: 6;
+}
+
+@media(max-width:768px){
+    main{
+        grid-template-columns: 1fr;
+    }
 }
