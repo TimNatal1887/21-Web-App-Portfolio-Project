@@ -69,7 +69,7 @@ main{
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(6,1fr);
 }
-.players-hand{
+.player-hand{
     list-style: none;
     display: flex;
     justify-content: center;
@@ -115,7 +115,7 @@ main{
     justify-content: center;
 }
 
-.players-hand{
+.player-hand{
     min-width: 400px;
 }
 
