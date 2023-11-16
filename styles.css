@@ -80,7 +80,8 @@ main{
     grid-row: 5;
     grid-column: 3;     
 }
-#player-count{
+#players-count{
+    text-align: center;
     color: greenyellow;
 }
 .dealer{
@@ -117,6 +118,16 @@ main{
 
 .player-hand{
     min-width: 400px;
+}
+
+#dealers-count{
+    font-size: 30px;
+    color: red;
+}
+#players-count{
+    font-size: 30px;
+    color: greenyellow;
+
 }
 
 .player-moves{
