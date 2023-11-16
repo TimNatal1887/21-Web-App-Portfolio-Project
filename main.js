@@ -16,16 +16,21 @@ wagerForm.addEventListener("submit",(event)=>{
     .then((response) => response.json())
     .then((data)=> {
         data.cards.forEach(card => displayCard(card))
-        startGame(data.cards)
     })
+    startGame()
 })
     
     
     
     
 
-holdButton.addEventListener("submit",(event)=>{
+drawButton.addEventListener("submit",(event)=>{
     event.preventDefault()
+    fetch("https://deckofcardsapi.com/api/deck/fmlxy9qw29b8/draw/?count=1")
+    .then((response)=>response.json())
+    .then((data)=> {
+        displayCard(data.cards[0])
+    })  
 })
 
 holdButton.addEventListener("submit",(event)=>{
@@ -36,15 +41,10 @@ restartButton.addEventListener("submit",(event)=>{
     event.preventDefault()
 })
 
-function startGame(cards){
+function startGame(){
     const points = document.querySelector("#points").value
     const wagerAmount = document.querySelector(".wager-amount")
-    const playerHand = document.querySelector(".players-hand")
-    const dealerHand = document.querySelector(".dealers-hand")
     // const dealerCount = randomDealer()
-    const playerCount = cardCounter(cards)
-    console.log(playerCount)
-    
     
     drawButton.style.display = "inline"
     holdButton.style.display = "inline"
@@ -52,8 +52,6 @@ function startGame(cards){
     restartButton.style.display = "inline"
     ruleText.style.display = "inline"
     wagerAmount.textContent = `Wager Amount : ${points}`
-    dealerHand.textContent += `Dealer's Hand: 17 `
-    playerHand.textContent += `Player's Hand: ${playerCount}`
     
     
     
@@ -64,18 +62,21 @@ function startGame(cards){
 function displayCard(card){
     const newCard = document.createElement("li");
     newCard.classList.add("card");
-    newCard.value = `${card.value}`
+    newCard.id = `${card.value}`
     newCard.innerHTML = `<img src="${card.image}" alt="">`
     cardList.append(newCard)
+    const allCards = document.querySelectorAll(".card")
+    console.log(allCards)
+    cardCounter(allCards)
     
 }
 
 function cardCounter(cards){
+    const playerHand = document.querySelector(".players-hand")
     let aceCount = 0
     let playerCount = 0
     cards.forEach(card=> {
-        const cardValue = card.value
-        console.log(cardValue)
+        const cardValue = card.id
         if(cardValue === "KING" || cardValue === "QUEEN" || cardValue === "JACK"){
             playerCount += 10
         }else if(cardValue === "ACE"){
@@ -85,13 +86,30 @@ function cardCounter(cards){
         }else{
             playerCount += +cardValue
         }
-    })
 
-    while(playerCount > 21 && aceCount > 1){
+    })
+    
+    while(playerCount > 21 && aceCount > 0){
         playerCount -= 10
         aceCount--
     }
-
+    
+    playerHand.textContent = `Player's Hand: ${playerCount}`
     return playerCount
 
 }
+
+// function runGame(){
+//     const dealerCount = dealerCardCount()
+// }
+
+// function dealerCardCount(dealersCount,playersCount){
+//     if(dealersCount < 15 || dealersCount < playersCount){
+//         count += Math.ceil(Math.random() * 11)
+//     }
+    
+// }
+
+// function checkWinner(){
+
+// }
