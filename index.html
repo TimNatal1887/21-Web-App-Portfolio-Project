@@ -10,7 +10,7 @@
 <body>
     <main>
         <a href="./About/index.html">About Me</a>
-        <header class="header-1">
+        <header class="header-one">
         <span class="start-black">G</span>
         <span class="start-red">a</span>
         <span class="start-black">m</span>
@@ -20,55 +20,59 @@
         <spa class="start-black">2</span>
         <span class="start-red">1</span>
         </header>
-        <header class="header-2">
+        <header class="header-two">
             <span class="start-black">2</span>
             <span class="start-red">1</span>
         </header>
         <form class="wager">
-            <label for="points">Place a Wager</label>
-            <input name="points" type="number" min="50" max="9999" required>
+            <label id="wager-label" for="points">Place a Wager</label>
+            <input name="points" id="points" type="number" min="50" max="9999" required>
             <button type="submit">Start Game</button>
             <div class="error">Error! Wager must be between 50 and 9999 points!</div>
         </form>
         <div class="dealer">
-            <label for="dealers-count">Dealer's Hand</label>
+            <header class="dealers-hand">Dealer's Hand</header>
             <div id="dealers-count"></div>
         </div>
+        <div class="win-message"></div>
             <div class="points-won">Total Points Won: 0</div>
             <div class="points-lost">Total Points Lost: 0</div>
         </section>
         <div class="default">Pull a higher count than the dealer to win!</div>
         <div class="player">
             <div class="wager-amount">Wager Amount: 0 points</div>
-            <label for="players-hand">Player's Hand: <div id="player-count"></div></label>
-            <ul class="players-hand">
+             <header class="players-hand">Player's Hand</header><div id="player-count"></div></label>
+            <ul name="players-hand" id="players-hand" class="players-hand">
                 <!-- <li class="card one">
                     <img src="assets/examplecard.png" alt="ace-of-clubs">
                 </li>
                 <li class="card two">
                     <img src="assets/examplecard.png" alt="ace-of-clubs">
-                </li>
-                <li class="card three">
-                    <img src="assets/examplecard.png" alt="ace-of-clubs">
-                </li>
-                <li class="card two">
-                    <img src="assets/examplecard.png" alt="ace-of-clubs">
-                </li>
-                <li class="card three">
-                    <img src="assets/examplecard.png" alt="ace-of-clubs">
-                </li>
-                <li class="card two">
-                    <img src="assets/examplecard.png" alt="ace-of-clubs">
-                </li>
-                <li class="card three">
-                    <img src="assets/examplecard.png" alt="ace-of-clubs">
                 </li> -->
+                <!-- <li class="card three">
+                    <img src="assets/examplecard.png" alt="ace-of-clubs">
+                </li>
+                <li class="card two">
+                    <img src="assets/examplecard.png" alt="ace-of-clubs">
+                </li>
+                <li class="card three">
+                    <img src="assets/examplecard.png" alt="ace-of-clubs">
+                </li>
+                <li class="card two">
+                    <img src="assets/examplecard.png" alt="ace-of-clubs">
+                </li>
+                <li class="card three">
+                    <img src="assets/examplecard.png" alt="ace-of-clubs"> -->
+                </li>
             </ul>
             
         </div>
         <section class="player-moves">
             <form class="draw">
                 <button type="submit">Hit</button>
+            </form>
+            <form class="reset">
+                <button type="submit">Restart Game</button>
             </form>
             <form class="hold">
                 <button type="submit">Hold</button>

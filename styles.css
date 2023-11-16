@@ -14,11 +14,11 @@ body{
     }
 }
 a{
-    margin-right: 0px;
-    margin-left: 50px;
+    /* margin-right: 50px;
+    margin-left: 50px; */
     grid-column: 1;
-    height: fit-content;
-    width: fit-content;
+    /* height: fit-content; */
+    /* width: fit-content; */
     padding: 0px;
     color: white;
 }
@@ -51,13 +51,14 @@ a:hover{
     
 }
 
-header{
+.header-one,
+.header-two{
     padding: 10px;
     font-size: 50px;
     grid-column: 2/5;
     text-align: center;
 }
-.header-2{
+.header-two{
     display: none;
 }
 
@@ -102,14 +103,20 @@ main{
     align-items: center;
 }
 .card img{
-    height: 200px;
+    height: 175px;
 }
 
-label{
+.players-hand,
+.dealers-hand,
+#wager-label{
     display: flex;
     color: white;
     font-size: 30px;
     justify-content: center;
+}
+
+.players-hand{
+    min-width: 400px;
 }
 
 .player-moves{
@@ -137,13 +144,19 @@ label{
 
 
 form{
-    margin-left: 40px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.reset{
+    display: none;
 }
 
 form button{
     font-size: 18px;
     font-weight: bold;
+    
 }
 .draw{
     display: none;
@@ -151,6 +164,10 @@ form button{
 }
 .hold{
     display: none;
+}
+
+#points{
+    width: 50px;
 }
 
 .points-won{
@@ -181,6 +198,14 @@ form button{
     background: red;
 }
 
+.win-message{
+    display: none;
+    font-size: 50px;
+    text-align: center;
+    color: red;
+    grid-column: 3;
+    grid-row: 3;
+}
 /* @media{
     max
 } */
@@ -192,26 +217,21 @@ form button{
     main{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-    .header-1{
+    .header-one{
         display: none;
     }
 
-    .header-2{
+    .header-two{
         display: block;
     }
     .players-hand{
         flex-wrap: wrap;
     }
     .card img{
-        height: 175px;
+        height: 150px;
     }
 
-    .test{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px 10px;
-        flex-direction: row;
-    }
 }
