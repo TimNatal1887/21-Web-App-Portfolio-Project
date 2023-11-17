@@ -69,6 +69,7 @@ main{
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(6,1fr);
 }
+.dealer-hand,
 .player-hand{
     list-style: none;
     display: flex;
@@ -76,7 +77,7 @@ main{
     align-items: center;
 }
 
-.player{
+.player-player{
     grid-row: 5;
     grid-column: 3;     
 }
@@ -84,7 +85,7 @@ main{
     text-align: center;
     color: greenyellow;
 }
-.dealer{
+.player-dealer{
     grid-column: 3;
     grid-row: 2;
 }

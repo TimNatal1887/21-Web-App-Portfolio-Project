@@ -30,17 +30,27 @@
             <button type="submit">Start Game</button>
             <div class="error">Error! Wager must be between 50 and 9999 points!</div>
         </form>
-        <div class="dealer">
+        <div class="player-dealer">
             <header class="dealers-hand">Dealer's Hand:</header>
             <div id="dealers-count"></div>
+            <ul class="dealer-hand">
+            </ul>
         </div>
         <div class="win-message"></div>
-            <div class="points-won">Total Points Won: 0</div>
-            <div class="points-lost">Total Points Lost: 0</div>
+        <div class ="points-won">
+            Total Points Won: 
+            <div class="points-won" id="points-won">0</div>
+
+        </div>
+        <div class = "points-lost">
+            Total Points Lost:
+            <div class="points-lost" id="points-lost">0</div>
+
+        </div>
         </section>
         <div class="default">Pull a higher count than the dealer to win!</div>
-        <div class="player">
-            <div class="wager-amount"></div>
+        <div class="player-player">
+            <div class="wager-amount">Wager Amount: <div id="wager-amount" class="wager-amount">0</div></div>
              <header class="players-hand">Player's Hand</header>
              <div id="players-count"></div>
             <ul name="players-hand" id="player-hand" class="player-hand"></ul>
