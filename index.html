@@ -24,11 +24,12 @@
             <span class="start-black">2</span>
             <span class="start-red">1</span>
         </header>
-        <form class="wager">
+        <section class="starting-cards"></section>
+        <form class="wager" novalidate>
             <label id="wager-label" for="points">Place a Wager</label>
-            <input name="points" id="points" type="number" min="50" max="9999" required>
+            <input name="points" id="points" type="number" min="50" max="10000" required>
             <button type="submit">Start Game</button>
-            <div class="error">Error! Wager must be between 50 and 9999 points!</div>
+            <div class="error">Error! Wager must be between 50 and 10000 points!</div>
         </form>
         <div class="player-dealer">
             <header class="dealers-hand">Dealer's Hand:</header>
@@ -48,7 +49,7 @@
 
         </div>
         </section>
-        <div class="default">Pull a higher count than the dealer to win!</div>
+        <div class="default">Pull a higher count than the dealer but be careful! If you go over 21, you lose!</div>
         <div class="player-player">
             <div class="wager-amount">Wager Amount: <div id="wager-amount" class="wager-amount">0</div></div>
              <header class="players-hand">Player's Hand</header>
