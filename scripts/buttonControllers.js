@@ -3,6 +3,8 @@ import { checkWinner, isWinnerFound, resetPage } from "../main.js";
 const restartButton = document.querySelector(".reset")
 const drawButton = document.querySelector(".draw")
 const holdButton = document.querySelector(".hold")
+let intervalId;
+
 
 function handleHoldButton(event){
     event.preventDefault();
@@ -22,7 +24,7 @@ function handleHoldButton(event){
     if(foundWinner){
         isWinnerFound(foundWinner)
     }else{
-        const intervalId = setInterval(() => {
+         intervalId = setInterval(() => {
             dealersCount = dealerDraws(dealersCount, playersCount, playerTurnOver, intervalId);
         }, 2000);
     }
@@ -56,5 +58,6 @@ export {
     handleHoldButton,
     restartButton,
     drawButton,
-    holdButton
+    holdButton,
+    intervalId
 }

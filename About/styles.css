@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Inconsolata&display=swap');
+
+html,
+body{
+    height: 100%;
+    font-family: Inconsolata;
+    background: url("../assets/Moon.svg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+#welcome-message{
+    margin: 100px 0px 0px 30px;
+    font-family: Karla;
+    color: white;
+    font-size: 55px;
+    font-style: italic;
+}
+.game-link{
+    color: white;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+main{
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+}
+
+main *{
+    /* border: 1px solid red */
+}
+.about-section{
+    margin-left: 30px;
+    margin-right: 200px;
+    margin-top: 75px;
+}
+.about-me{
+    display: flex;
+    flex-direction: column;
+}
+
+.about-text{
+    line-height: 25px;
+    width: 700px;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+.project-section{
+    border-top-left-radius: 120px;
+  border-bottom-right-radius: 120px;
+  border: 2px solid #333; /* You can adjust the color and thickness as needed */
+  padding: 20px; /* Adjust the padding as needed */
+  width: 200px; /* Set the desired width */
+  height: 100px; /* Set the desired height */
+}
+.project-header{
+    color: aquamarine;
+    font-weight: bold;
+    margin: 0px;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+.project-body{
+    margin-bottom: 200px;
+    margin-left: 40px;
+    margin-right: 30px;
+
+}
+
+
+.contacts{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+#linkedin-img{
+    width: 100px;
+}
+
+#github-img{
+    width: 100px;
+}
+
+#email-img{
+    width: 100px;
+}

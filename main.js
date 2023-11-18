@@ -1,5 +1,5 @@
 import { startGame, displayCard, startingCards, removeStartingCards, playerHand, dealerHand, cardWrapper } from "./scripts/cardController.js"
-import { handleRestartButton, handleHoldButton, restartButton, drawButton, holdButton } from "./scripts/buttonControllers.js"
+import { handleRestartButton, handleHoldButton, restartButton, drawButton, holdButton, handleDrawButton,intervalId } from "./scripts/buttonControllers.js"
 const wagerForm = document.querySelector(".wager")
 const ruleText = document.querySelector(".default")
 const winMessage = document.querySelector(".win-message")
@@ -77,6 +77,7 @@ function isWinnerFound(foundWinner){
 }
 
 function resetPage(){
+    clearInterval(intervalId)
     const cardList = document.querySelectorAll(".card")
     const dealerHand = document.querySelector("#dealers-count");
     const playerHand = document.querySelector("#players-count");
@@ -102,6 +103,8 @@ function resetPage(){
     restartButton.style.display = "none"
     wagerForm.reset()
     startingCards()
+    holdButton.removeEventListener("submit",handleHoldButton)
+    drawButton.removeEventListener("submit",handleDrawButton)
 }
 
 export {
