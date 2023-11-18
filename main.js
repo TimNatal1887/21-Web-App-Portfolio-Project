@@ -1,5 +1,5 @@
-import { startGame, displayCard, startingCards, removeStartingCards, playerHand, dealerHand, cardWrapper} from "./scripts/cardController.js"
-import { handleRestartButton,handleHoldButton,restartButton,drawButton,holdButton } from "./scripts/buttonControllers.js"
+import { startGame, displayCard, startingCards, removeStartingCards, playerHand, dealerHand, cardWrapper } from "./scripts/cardController.js"
+import { handleRestartButton, handleHoldButton, restartButton, drawButton, holdButton } from "./scripts/buttonControllers.js"
 const wagerForm = document.querySelector(".wager")
 const ruleText = document.querySelector(".default")
 const winMessage = document.querySelector(".win-message")
@@ -50,13 +50,18 @@ function checkWinner(count1, count2, playerTurnOver, dealerTurnOver){
         playerWonPoints += points
         pointsWon.textContent = `${playerWonPoints}`
         isWinnerFound(winner)
-    } else if ((count2 <= count1 && count1 <= 21 && playerTurnOver) || (count2 > 21 && count1 <= 21)) {
+    } else if ((count2 < count1 && count1 <= 21 && playerTurnOver) || (count2 > 21 && count1 <= 21)) {
         winMessage.classList.add("dealer-won");
         winMessage.textContent = "Dealer Wins!";
         winner = 'Dealer';
         points *=2
         playerPointsLost += points
         pointsLost.textContent = `${playerPointsLost}`
+        isWinnerFound(winner)
+    }else if(count2 === count1 && playerTurnOver && dealerTurnOver){
+        winMessage.classList.add("tie-game")
+        winMessage.textContent = "Draw"
+        winner = "Draw"
         isWinnerFound(winner)
     }
     return winner;
@@ -78,8 +83,10 @@ function resetPage(){
     const wagerAmount = document.querySelector("#wager-amount");
     if(winMessage.classList.contains("dealer-won")){
         winMessage.classList.remove("dealer-won")
-    }else{
+    }else if(winMessage.classList.contains("player-won")){
         winMessage.classList.remove("player-won")
+    }else{
+        winMessage.classList.remove("tie-game")
     }
     ruleText.style.display = "none"
     drawButton.style.display = "none"

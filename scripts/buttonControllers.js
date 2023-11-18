@@ -1,5 +1,5 @@
-import { dealerHand,playerHand,displayCard,cardCounter,dealerDraws } from "./cardController.js";
-import { checkWinner,isWinnerFound,resetPage } from "../main.js";
+import { dealerHand, playerHand, displayCard, cardCounter, dealerDraws } from "./cardController.js";
+import { checkWinner, isWinnerFound, resetPage } from "../main.js";
 const restartButton = document.querySelector(".reset")
 const drawButton = document.querySelector(".draw")
 const holdButton = document.querySelector(".hold")

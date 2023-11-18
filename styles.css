@@ -261,6 +261,10 @@ form button{
 .player-won{
     color: greenyellow;
 }
+
+.tie-game{
+    color: orange;
+}
 @media(max-width:848px){
     a{
         margin-right: 30px;

@@ -1,5 +1,5 @@
-import { drawButton, holdButton, restartButton, handleDrawButton} from "./buttonControllers.js";
-import {wagerForm,ruleText,isWinnerFound,checkWinner} from "../main.js"
+import { drawButton, holdButton, restartButton, handleDrawButton } from "./buttonControllers.js";
+import { wagerForm, ruleText, isWinnerFound, checkWinner } from "../main.js"
 
 const cardWrapper = document.querySelector(".starting-cards")
 const dealerHand = document.querySelector("#dealers-count");
