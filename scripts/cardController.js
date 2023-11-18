@@ -13,7 +13,7 @@ function dealerDraws(count1, count2, playerTurnOver, intervalId) {
             displayCard(dealerHand, "dealer", data.cards[0]);
             count1 = cardCounter(dealerHand, document.querySelectorAll(".dealer"));
             document.querySelector("#dealers-count").textContent = count1;
-            if (count1 < 21 && count1 < count2 && count1 < 17) {
+            if (count1 < 21 && count1 <= count2 && count1 < 17) {
                 return count1
             } else {
                 clearInterval(intervalId);
