@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded",()=>{
             .then((data)=> {
                 data.cards.forEach(card => displayCard(dealerHand,"dealer",card))
             })
+            holdButton.addEventListener("submit", handleHoldButton);
+            restartButton.addEventListener("submit", handleRestartButton) 
+            removeStartingCards()
         }
-        holdButton.addEventListener("submit", handleHoldButton);
-        restartButton.addEventListener("submit", handleRestartButton) 
-        removeStartingCards()
     })
 })
 
