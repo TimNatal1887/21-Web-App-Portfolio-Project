@@ -99,7 +99,7 @@ function resetPage(){
     cardList.forEach(card=> card.remove())
     dealerHand.textContent = ""
     playerHand.textContent = ""
-    wagerAmount.textContent = ""
+    wagerAmount.textContent = "0"
     restartButton.style.display = "none"
     wagerForm.reset()
     startingCards()
