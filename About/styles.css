@@ -4,7 +4,6 @@
 html,
 body{
     height: 100%;
-    width: 100%;
     font-family: Inconsolata;
     background: url("../assets/Moon.svg");
     background-size: cover;
@@ -26,7 +25,6 @@ body{
     margin-top: 30px;
 }
 main{
-    width: 100%;
     display: flex;
     flex-direction: row;
 }
@@ -122,7 +120,7 @@ footer li{
         flex-direction: column;
     }
     footer li{
-        margin: 0px 50px 0px 50px;
+        margin: 0px 25px 0px 25px;
     }
     main{
         display: flex;
@@ -134,6 +132,17 @@ footer li{
         margin-bottom: 100;
     }
     .footer-img{
-        width: 100px;
+        width: 75px;
+    }
+    .about-section{
+        margin-right: 50px;
+    }
+    .about-text{
+        width: auto
+    }
+    .project-section{
+        padding: 0px;
+        margin: 0px;
+        width: auto
     }
 }

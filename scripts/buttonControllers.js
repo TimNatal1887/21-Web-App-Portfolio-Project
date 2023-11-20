@@ -8,9 +8,9 @@ let intervalId;
 
 function handleHoldButton(event){
     event.preventDefault();
+    const playersCount = parseInt(playerHand.textContent)
     let foundWinner = "";
     let dealersCount = parseInt(dealerHand.textContent)
-    let playersCount = parseInt(playerHand.textContent)
     drawButton.style.display = "none";
     holdButton.style.display = "none";
     const playerTurnOver = true;
@@ -39,7 +39,7 @@ function handleRestartButton(event){
 
 function handleDrawButton(event){
     event.preventDefault();
-    let dealersCount = parseInt(dealerHand.textContent)
+    const dealersCount = parseInt(dealerHand.textContent)
     let playersCount = parseInt(playerHand.textContent)
     let foundWinner = "";
     fetch("https://deckofcardsapi.com/api/deck/fmlxy9qw29b8/draw/?count=1")
