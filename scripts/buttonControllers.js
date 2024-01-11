@@ -1,5 +1,5 @@
 import { dealerHand, playerHand, displayCard, cardCounter, dealerDraws } from "./cardController.js";
-import { checkWinner, isWinnerFound, resetPage } from "../main.js";
+import { checkWinner, isWinnerFound, resetPage, cardDeckURL } from "../main.js";
 const restartButton = document.querySelector(".reset")
 const drawButton = document.querySelector(".draw")
 const holdButton = document.querySelector(".hold")
@@ -33,7 +33,7 @@ function handleHoldButton(event){
 
 function handleRestartButton(event){
     event.preventDefault();
-    fetch("https://deckofcardsapi.com/api/deck/fmlxy9qw29b8/shuffle/")
+    fetch(`${cardDeckURL}shuffle/`)
     resetPage();
 }
 
@@ -42,7 +42,7 @@ function handleDrawButton(event){
     const dealersCount = parseInt(dealerHand.textContent)
     let playersCount = parseInt(playerHand.textContent)
     let foundWinner = "";
-    fetch("https://deckofcardsapi.com/api/deck/fmlxy9qw29b8/draw/?count=1")
+    fetch(`${cardDeckURL}draw/?count=1`)
     .then((response) => response.json())
     .then((data) => {
         displayCard(playerHand,"player",data.cards[0]);

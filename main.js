@@ -4,9 +4,14 @@ const wagerForm = document.querySelector(".wager")
 const ruleText = document.querySelector(".default")
 const winMessage = document.querySelector(".win-message")
 const errorMessage = document.querySelector(".error")
+let cardDeckURL = "";
 
 document.addEventListener("DOMContentLoaded",()=>{
-    fetch("https://deckofcardsapi.com/api/deck/fmlxy9qw29b8/shuffle/")
+    fetch("https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
+    .then((response)=> response.json())
+    .then((data)=>{
+        cardDeckURL = `https://deckofcardsapi.com/api/deck/${data.deck_id}/`
+    })
     .catch((error)=> console.log(error))
     
     startingCards()
@@ -16,14 +21,14 @@ document.addEventListener("DOMContentLoaded",()=>{
             errorMessage.style.display = "block"
         }else{
             errorMessage.style.display = "none"
-            fetch("https://deckofcardsapi.com/api/deck/fmlxy9qw29b8/draw/?count=2")
+            fetch(`${cardDeckURL}draw/?count=2`)
             .then((response) => response.json())
             .then((data)=> {
                 data.cards.forEach(card => displayCard(playerHand,"player",card))
                 startGame()
             })
         
-            fetch("https://deckofcardsapi.com/api/deck/fmlxy9qw29b8/draw/?count=2")
+            fetch(`${cardDeckURL}draw/?count=2`)
             .then((response) => response.json())
             .then((data)=> {
                 data.cards.forEach(card => displayCard(dealerHand,"dealer",card))
@@ -112,5 +117,6 @@ export {
     ruleText,
     isWinnerFound,
     checkWinner,
-    resetPage
+    resetPage,
+    cardDeckURL
 }

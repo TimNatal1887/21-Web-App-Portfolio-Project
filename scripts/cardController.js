@@ -1,5 +1,5 @@
 import { drawButton, holdButton, restartButton, handleDrawButton } from "./buttonControllers.js";
-import { wagerForm, ruleText, isWinnerFound, checkWinner } from "../main.js"
+import { wagerForm, ruleText, isWinnerFound, checkWinner, cardDeckURL } from "../main.js"
 
 const cardWrapper = document.querySelector(".starting-cards")
 const dealerHand = document.querySelector("#dealers-count");
@@ -7,7 +7,7 @@ const playerHand = document.querySelector("#players-count");
 
 function dealerDraws(count1, count2, playerTurnOver, intervalId) {
     let foundWinner = ""
-    fetch("https://deckofcardsapi.com/api/deck/fmlxy9qw29b8/draw/?count=1")
+    fetch(`${cardDeckURL}draw/?count=1`)
         .then((response) => response.json())
         .then((data) => {
             displayCard(dealerHand, "dealer", data.cards[0]);
@@ -73,7 +73,7 @@ function cardCounter(hand,cards){
 
 
 function startingCards(){
-    fetch("https://deckofcardsapi.com/api/deck/fmlxy9qw29b8/draw/?count=2")
+    fetch(`${cardDeckURL}draw/?count=2`)
     .then((response)=> response.json())
     .then((data)=>{
         data.cards.forEach((card,index)=>{
